@@ -54,7 +54,7 @@ public class HomeController {
 	    model.addAttribute("title", "Add Job");
             return "add";
         }
-
+// added in case of no value being entered.
         Optional<Employer> optEmployer = employerRepository.findById(employerId);
         if (optEmployer.isPresent()) {
             Employer employer = optEmployer.get();
@@ -71,6 +71,7 @@ public class HomeController {
         return "redirect:";
     }
 
+    // added to list all added jobs with all values together
     @GetMapping("view/{jobId}")
     public String displayViewJob(Model model, @PathVariable int jobId) {
 

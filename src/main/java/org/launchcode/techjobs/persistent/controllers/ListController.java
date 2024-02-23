@@ -30,6 +30,7 @@ public class ListController {
 
     static HashMap<String, String> columnChoices = new HashMap<>();
 
+    // sets the table with the needed values.
     public ListController () {
 
         columnChoices.put("all", "All");
@@ -38,6 +39,7 @@ public class ListController {
 
     }
 
+    // this populates the table with the stored data
     @RequestMapping("")
     public String list(Model model) {
 
