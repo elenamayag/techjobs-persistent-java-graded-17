@@ -24,8 +24,6 @@ public class Job extends AbstractEntity{
     }
 
     // Getters and setters.
-
-
     public Employer getEmployer() {
         return employer;
     }

@@ -11,6 +11,7 @@ import org.launchcode.techjobs.persistent.models.data.EmployerRepository;
 
 import java.util.Optional;
 
+// used to save new employers info so that can be added to list jobs
 @Controller
 @RequestMapping("employers")
 public class EmployerController {
@@ -38,7 +39,7 @@ public class EmployerController {
     @GetMapping("view/{employerId}")
     public String displayViewEmployer(Model model, @PathVariable int employerId) {
 
-        Optional optEmployer = employerRepository.findById(employerId);;
+        Optional optEmployer = employerRepository.findById(employerId);
         if (optEmployer.isPresent()) {
             Employer employer = (Employer) optEmployer.get();
             model.addAttribute("employer", employer);
